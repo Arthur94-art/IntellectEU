@@ -1,0 +1,53 @@
+.pagination {
+    max-width: 100%;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_firstBlock {
+        display: flex;
+        &__item {
+            width: 114px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 25px;
+            color: #757575;
+        }
+        &__displaying {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 25px;
+            color: #757575;
+        }
+    }
+    &_secondBlock {
+        display: flex;
+        &__prevBtn {
+            margin-right: 40px;
+            margin-left: 50px;
+        }
+        &__nextBtn {
+            font-size: 16px;
+            margin-left: 40px;
+        }
+        &__numOfPage {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 25px;
+            color: #757575;
+        }
+    }
+}
+.selectBlock select {
+    margin-left: 40px;
+    width: 50px;
+    text-align: center;
+    height: 30px;
+    margin-right: 35px;
+}

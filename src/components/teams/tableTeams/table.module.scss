@@ -1,0 +1,53 @@
+.row {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    height: 55px;
+    border-bottom: 1px solid #ede6fb;
+    &_name {
+        width: 110px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #14141e;
+    }
+    &_city {
+        width: 131px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #14141e;
+    }
+    &_abb {
+        width: 134px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #14141e;
+    }
+    &_conf {
+        width: 124px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #14141e;
+        &__budget {
+            background: #daf5ee;
+            display: flex;
+            width: 65px;
+            height: 28px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #daf5ee;
+            border-radius: 21px;
+        }
+    }
+}
