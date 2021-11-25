@@ -1,14 +1,22 @@
 
-import { Context } from '../../..';
-import React from "react";
+import React, { useEffect } from "react";
 import { useContext } from "react";
 import s from './table.module.scss';
 import Pagination from './pagination';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTeams } from "../../../actions";
 
 
 
-const Table1 = () => {
-    const { teams } = useContext(Context);
+const Table1 = (props) => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchTeams());
+    }, [dispatch])
+    const teams = useSelector(state => state.teams)
+
     function getColor(conf) {
         if (conf === "East") {
             return ['#DAF5EE', '#1FAD87', '1px solid #DAF5EE']
@@ -19,10 +27,10 @@ const Table1 = () => {
 
     return (
         <div >
-            {teams.map((el, i) => {
+            {teams.map((el) => {
 
                 return (<div className={s.row} key={el.id}>
-                    <div className={s.row_name}>{el.full_name.match(/\w+$/)[0]}</div>
+                    <div className={s.row_name}>{el.name}</div>
                     <div className={s.row_city}>{el.city}</div>
                     <div className={s.row_abb}>{el.abbreviation}</div>
                     <div className={s.row_conf}>
