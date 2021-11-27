@@ -1,8 +1,8 @@
-import { SAVE_TEAMS, FETCH_TEAMS, FETCH_PLAYERS } from "./actions";
+import { FETCH_TEAMS, FETCH_PLAYERS, ADD_TEAM } from "./actions";
 import axios from "axios";
 
 
-export function fetchTeams(page = 0, perPage = 15) {
+export function fetchTeams(page = 1, perPage = 10) {
     const response = axios.get(`https://www.balldontlie.io/api/v1/teams?page=${page}&per_page=${perPage}`)
     return {
         type: FETCH_TEAMS,
@@ -10,7 +10,8 @@ export function fetchTeams(page = 0, perPage = 15) {
     }
 }
 
-export function fetchPlayers(page = 0, perPage = 8) {
+
+export function fetchPlayers(page = 1, perPage = 8) {
     const response = axios.get(`https://www.balldontlie.io/api/v1/players?page=${page}&per_page=${perPage}
 `)
     return {
@@ -19,3 +20,18 @@ export function fetchPlayers(page = 0, perPage = 8) {
 
     }
 }
+
+export function addNewTeam(name = '', city = '', abb = '', conf = '') {
+    const newTeam = {
+        name: name,
+        city: city,
+        abbreviation: abb,
+        conference: conf
+    }
+    return {
+        type: ADD_TEAM,
+        payload: newTeam
+
+    }
+}
+

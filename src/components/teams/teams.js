@@ -1,14 +1,7 @@
 import React from 'react';
-import Table1 from './tableTeams/table';
+import TableTeamsContainer from './tableTeams/tableTeamsContainer';
 import s from './teams.module.scss';
 
-// abbreviation: "ATL"
-// city: "Atlanta"
-// conference: "East"
-// division: "Southeast"
-// full_name: "Atlanta Hawks"
-// id: 1
-// name: "Hawks"
 
 const Teams = () => {
 
@@ -20,7 +13,7 @@ const Teams = () => {
             <div className={s.table_head__abb}>Abbreviation</div>
             <div className={s.table_head__conf}>Conference</div>
         </div>
-        <Table1 />
+        <TableTeamsContainer style={{ overflowX: 'auto' }} />
     </>
 }
 

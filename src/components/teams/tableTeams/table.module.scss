@@ -1,5 +1,6 @@
 .row {
     display: flex;
+    overflow-x: auto;
     align-items: center;
     padding-left: 16px;
     height: 55px;
@@ -51,3 +52,4 @@
         }
     }
 }
+

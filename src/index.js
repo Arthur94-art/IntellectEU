@@ -10,50 +10,10 @@ import reducers from './reducers';
 
 
 
-// export const Context = createContext(null);
 
-const Main = () => {
-
-
-  // useEffect(() => {
-  //   fetch(
-  //     ` https://www.balldontlie.io/api/v1/players
-  //     `
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setPlayers(data)
-  //     })
-  //     .catch((error) => console.log(error.message));
-  // }, []);
-
-  // console.log(players)
-
-
-  // useEffect(() => {
-  //   fetch(
-  //     ` https://www.balldontlie.io/api/v1/teams
-  //     `
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setTeams(data.data)
-  //     })
-  //     .catch((error) => console.log(error.message));
-  // }, []);
-  return (
-
-    <Provider value={createStore(reducers, {}, applyMiddleware(reduxPromise))}>
-      <App />
-
-    </Provider>
-
-
-  )
-}
 
 ReactDOM.render(
-  
+
   <Provider store={createStore(reducers, {}, applyMiddleware(reduxPromise))}>
     <App />
   </Provider>,

@@ -27,10 +27,16 @@
     &_secondBlock {
         display: flex;
         &__prevBtn {
+            border: 0;
+            cursor: pointer;
+            border-radius: 50%;
             margin-right: 40px;
             margin-left: 50px;
         }
         &__nextBtn {
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
             font-size: 16px;
             margin-left: 40px;
         }
@@ -50,4 +56,41 @@
     text-align: center;
     height: 30px;
     margin-right: 35px;
+}
+@media (max-width: 970px) {
+    .pagination_firstBlock {
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &_firstBlock {
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .pagination {
+        display: block;
+    }
+    .pagination_firstBlock {
+        display: block;
+        max-width: 100%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    .pagination_firstBlock__item {
+        margin: 10px auto;
+    }
+    .pagination_secondBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .pagination_secondBlock__prevBtn,
+    .pagination_secondBlock__nextBtn {
+        width: 10%;
+        margin: 10px auto;
+    }
 }
