@@ -1,10 +1,8 @@
-
 import React from 'react';
 import s from './playerCards.module.scss';
 
 
 const PlayersCard = (props) => {
-
 
   return (<div>
     <div className={s.row}>
@@ -18,7 +16,6 @@ const PlayersCard = (props) => {
           </div>
         </div>)
       })}
-
     </div>
   </div>)
 }

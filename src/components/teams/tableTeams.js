@@ -1,28 +1,18 @@
 
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchTeams } from "../../../actions";
-import s from './table.module.scss';
-import PaginationContainer from "../../pagination/paginationContainer";
-
-
-
-
+import React from "react";
+import s from '../styles/table.module.scss';
+import PaginationContainerTeams from '../pagination/paginationContainerTeams';
 
 const TableTeams = (props) => {
-    const dispatch = useDispatch();
-    const [page, setPage] = useState(1);
-    const [selectValue, setSelectValue] = useState(10);
-
-    useEffect(() => {
-        dispatch(fetchTeams(page, selectValue));
-
-    },
-        [dispatch, page, selectValue]);
-
 
     return (
         <div id={s.main}>
+            <div className={s.table_head}>
+                <div className={s.table_head__name}>Name</div>
+                <div className={s.table_head__city}>City</div>
+                <div className={s.table_head__abb}>Abbreviation</div>
+                <div className={s.table_head__conf}>Conference</div>
+            </div>
             {props.teams.map((el, i) => {
                 return (<div className={s.row} key={i}>
                     <div className={s.row_name}>{el.name}</div>
@@ -40,7 +30,8 @@ const TableTeams = (props) => {
                 </div>
                 )
             })}
-            <PaginationContainer meta={props.meta} teams={props.teams} page={page} selectValue={selectValue} setPage={setPage} setSelectValue={setSelectValue} />
+            <PaginationContainerTeams 
+               />
         </div>
     )
 }

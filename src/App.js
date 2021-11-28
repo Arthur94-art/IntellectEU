@@ -1,10 +1,9 @@
 import React from 'react';
-
-
-import './App.scss';
+import './components/styles/App.scss'
 import HeaderContainer from './components/header/headerContainer';
 import PlayersContainer from './components/players/playerContainer';
-import Teams from './components/teams/teams';
+import TableTeamsContainer from './components/teams/tableTeamsContainer';
+
 
 
 
@@ -14,8 +13,8 @@ function App() {
   return (
     <div className='App'>
       <HeaderContainer />
-       <Teams />
-      <PlayersContainer /> 
+      <TableTeamsContainer />
+      <PlayersContainer />
     </div>
   );
 }

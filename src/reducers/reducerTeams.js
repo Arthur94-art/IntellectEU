@@ -19,8 +19,6 @@ function TeamsReducer(state = [[], {}], action) {
                     id: teams.id,
                     name: teams.name,
                     conference: teams.conference,
-
-
                 }
             })
             return [[...teams], meta];
