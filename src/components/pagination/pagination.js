@@ -39,8 +39,10 @@ const Pagination = (props) => {
                     false
                 } >&#8249;</button>
                 <div className={s.pagination_secondBlock__select}>
-                    <select defaultValue={1} onChange={(e) => {
+                    <select defaultValue={props.page} onChange={(e) => {
                         props.setPage(+e.target.value);
+                        console.log(props.page)
+
 
                     }}>
                         {props.getArrPerPAges(props.meta.total_pages).map((el) => {

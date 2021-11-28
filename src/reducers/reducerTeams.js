@@ -1,4 +1,4 @@
-import { FETCH_TEAMS } from "../actions/actions";
+import { ADD_TEAM, FETCH_TEAMS } from "../actions/actions";
 
 
 
@@ -25,6 +25,9 @@ function TeamsReducer(state = [[], {}], action) {
             })
             return [[...teams], meta];
 
+        case ADD_TEAM:
+            state[0].unshift(action.payload)
+            return [...state];
 
         default:
             return [...state]

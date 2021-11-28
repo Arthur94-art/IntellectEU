@@ -1,34 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchTeams } from "../../../actions";
+import React from "react";
 import Pagination from "./pagination";
 
-
-// const PaginationContainer = (props) => {
-
-//     return withData(PaginationContainer, Pagination, fetchTeams)
-// }
-
-// export default PaginationContainer;
 
 
 const PaginationContainer = (props) => {
 
-    const dispatch = useDispatch();
-    const [page, setPage] = useState(1);
-    const [selectValue, setSelectValue] = useState(10);
-
-    useEffect(() => {
-        dispatch(fetchTeams(page, selectValue));
-
-    },
-        [dispatch, page, selectValue]);
-
     const onHandleNextClcik = () => {
-        setPage(page + 1);
+        props.setPage(props.page + 1);
     }
     const onHandlePrevClcik = () => {
-        setPage(page - 1);
+        props.setPage(props.page - 1);
     }
 
     function getArrPerPAges(num) {
@@ -55,13 +36,13 @@ const PaginationContainer = (props) => {
     return (
         <div>
             <Pagination
-                selectValue={selectValue} setSelectValue={setSelectValue}
+                selectValue={props.selectValue} setSelectValue={props.setSelectValue}
                 onHandleNextClcik={onHandleNextClcik}
                 onHandlePrevClcik={onHandlePrevClcik}
                 meta={props.meta}
                 getArrPerPAges={getArrPerPAges}
-                setPage={setPage}
-                page={page}
+                setPage={props.setPage}
+                page={props.page}
                 teams={props.teams}
                 getArrSelecValue={getArrSelecValue}
             />

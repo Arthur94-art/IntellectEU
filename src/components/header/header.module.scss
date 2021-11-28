@@ -16,9 +16,13 @@
 }
 #name,
 #city,
-#abbreviation,
+#abbreviation{
+    padding: 16px 12px;
+}
 #conference {
     padding: 16px 12px;
+    border-color: rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
 }
 #form {
     display: flex;
@@ -49,11 +53,18 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 130%;
-    /* identical to box height, or 16px */
-
-    /* base / 700 */
-
     color: #757575;
+}
+.text_select {
+    display: flex;
+    flex-direction: column;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 130%;
+    color: #757575;
+    width: 194px;
 }
 
 @media (max-width: 1330px) {
@@ -82,4 +93,3 @@
         text-align: center;
     }
 }
-

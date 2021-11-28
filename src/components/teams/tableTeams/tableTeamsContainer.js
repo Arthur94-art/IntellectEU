@@ -1,19 +1,15 @@
-
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTeams } from "../../../actions";
+import { connect, useDispatch } from "react-redux";
+import *as actions from "../../../actions";
 import TableTeams from "./tableTeams";
 
 
-
-
-const TableTeamsContainer = () => {
-    const teams = useSelector(state => state.teams);
+const TableTeamsContainer = (props) => {
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchTeams());
-    }, [dispatch]);
 
+    useEffect(() => {
+        dispatch(props.fetchTeams());
+    }, [dispatch]);
 
     function getColor(conf) {
         if (conf === "East") {
@@ -22,11 +18,16 @@ const TableTeamsContainer = () => {
             return ['#FFEAE3', '#E64A18', '1px solid #FFEAE3']
         }
     }
+
     return (
         <div >
-            <TableTeams teams={teams[0]} meta={teams[1]} getColor={getColor} />
+            <TableTeams teams={props.teams[0]} meta={props.teams[1]} getColor={getColor} />
         </div>
     )
 }
 
-export default TableTeamsContainer;
+function mapStateToTeams(state) {
+    return state;
+}
+
+export default connect(mapStateToTeams, actions)(TableTeamsContainer);
