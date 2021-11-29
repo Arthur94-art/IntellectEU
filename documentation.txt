@@ -1,0 +1,13 @@
+All data is received from storage in the Main component and passed to all containers components through the context.
+Аlso in the main component there are a repeating functionality.
+  APP component consists of 5 parts:
+ -header: (HeaderContainer -> Header)  
+ -teams: (TableTeamsContainer -> TableTeams)
+ -pagination teams: (PaginationContainerTeams -> PaginationTeams)
+ -players, (PlayerContainer -> PlayerCards)
+ -pagination players: (PaginationContainerPlayers -> PaginationPlayers)
+ which consist of a containers, and a presentations component and linked by props.
+All styles are placed in a separate folder and connected as modules
+.
+install npm package before starting
+to run application - npm start

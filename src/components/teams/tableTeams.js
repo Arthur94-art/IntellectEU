@@ -1,7 +1,6 @@
 
 import React from "react";
 import s from '../styles/table.module.scss';
-import PaginationContainerTeams from '../pagination/paginationContainerTeams';
 
 const TableTeams = (props) => {
 
@@ -30,8 +29,7 @@ const TableTeams = (props) => {
                 </div>
                 )
             })}
-            <PaginationContainerTeams 
-               />
+          
         </div>
     )
 }
